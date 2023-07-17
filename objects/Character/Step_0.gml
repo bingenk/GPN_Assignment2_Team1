@@ -65,9 +65,6 @@ else {
     image_speed = 1;		
 }
 
-if (Attack2_Cooldown > 0) {
-    Attack2_Cooldown -= 1;
-}
 
 // Check if character is on the ground
 if (place_meeting(x, y + 1, obj_ground)) {
@@ -77,11 +74,10 @@ if (place_meeting(x, y + 1, obj_ground)) {
 }
 
 // Handle jumping
-if (keyboard_check(vk_space) || ukey) {
-	sprite_index = Character1_Jump; 
-    if (onGround) {
-        vSpeed = -jumpSpeed; // Jump upwards		
-    }
+if ((keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"))) && (onGround || remainingJumps > 0)) {
+    vSpeed = -jumpSpeed; // Jump upwards
+    remainingJumps -= 1; // Reduce remaining jumps
+    sprite_index = Character1_Jump; // Change sprite to jumping animation
 }
 
 // Apply gravity
@@ -98,4 +94,10 @@ if (place_meeting(x, y + vSpeed, obj_ground) && vSpeed > 0) {
         y += sign(vSpeed); // Move to the ground
     }
     vSpeed = 0; // Stop moving downwards
+	
+	// Reset remaining jumps if character lands on the ground
+    if (place_meeting(x, y + 1, obj_ground)) {
+        remainingJumps = maxJumps;
+    }
+	
 }

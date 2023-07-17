@@ -38,8 +38,8 @@
     "path": "sprites/ground/ground.yy",
   },
   "spriteMaskId": {
-    "name": "Lvl1_Tile",
-    "path": "sprites/Lvl1_Tile/Lvl1_Tile.yy",
+    "name": "ground",
+    "path": "sprites/ground/ground.yy",
   },
   "visible": false,
 }
