@@ -62,6 +62,7 @@
     {"id":{"name":"TileSet","path":"tilesets/TileSet/TileSet.yy",},},
     {"id":{"name":"obj_character_parent","path":"objects/obj_character_parent/obj_character_parent.yy",},},
     {"id":{"name":"Character1_Jump","path":"sprites/Character1_Jump/Character1_Jump.yy",},},
+    {"id":{"name":"ground","path":"sprites/ground/ground.yy",},},
     {"id":{"name":"obj_enemy2","path":"objects/obj_enemy2/obj_enemy2.yy",},},
     {"id":{"name":"Character1_Attack2","path":"sprites/Character1_Attack2/Character1_Attack2.yy",},},
     {"id":{"name":"Lvl1_Background","path":"sprites/Lvl1_Background/Lvl1_Background.yy",},},

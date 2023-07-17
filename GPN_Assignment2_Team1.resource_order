@@ -41,6 +41,7 @@
     {"name":"TileSet","order":1,"path":"tilesets/TileSet/TileSet.yy",},
     {"name":"obj_character_parent","order":1,"path":"objects/obj_character_parent/obj_character_parent.yy",},
     {"name":"Character1_Jump","order":2,"path":"sprites/Character1_Jump/Character1_Jump.yy",},
+    {"name":"ground","order":4,"path":"sprites/ground/ground.yy",},
     {"name":"obj_enemy2","order":1,"path":"objects/obj_enemy2/obj_enemy2.yy",},
     {"name":"Character1_Attack2","order":4,"path":"sprites/Character1_Attack2/Character1_Attack2.yy",},
     {"name":"obj_block_parent","order":1,"path":"objects/obj_block_parent/obj_block_parent.yy",},
