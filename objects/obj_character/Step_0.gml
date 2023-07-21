@@ -8,11 +8,13 @@ var Rkey = keyboard_check(ord("R"));
 var ekey = keyboard_check(ord("E"));
 var qkey = keyboard_check(ord("Q"));
 
+
+
 //Right movement
 if (keyboard_check(vk_right) || rkey) {
     x += 3;
     // Only change sprite if on the ground
-    if (onGround) {
+    if (onGround && !(keyboard_check(vk_down) || dkey)) {
         sprite_index = Character1_Run;
     }
     image_xscale = 1;
@@ -21,14 +23,21 @@ if (keyboard_check(vk_right) || rkey) {
 else if (keyboard_check(vk_left) || lkey) {
     x -= 3;
     // Only change sprite if on the ground
-    if (onGround) {
+    if (onGround && !(keyboard_check(vk_down) || dkey)) {
         sprite_index = Character1_Run;
     }
     image_xscale = -1;
 }
 //Down movement
-else if (keyboard_check(vk_down) || dkey) {
+else if ((keyboard_check(vk_down) || dkey) && !isDownPressed && onGround) {
     sprite_index = Character1_Down;
+    image_speed = 1; // adjust this to the speed you want
+    isDownPressed = true;
+} else if ((keyboard_check(vk_down) || dkey) && isDownPressed) {
+    if (image_index >= image_number - 1) {
+        image_speed = 0;
+        image_index = image_number - 1; // last frame
+    }
 }
 //Dash movement
 else if (keyboard_check(vk_alt)) {
@@ -72,6 +81,13 @@ else {
     sprite_index = Character1;
     image_speed = 1;		
 }
+
+
+if (keyboard_check_released(vk_down) || keyboard_check_released(ord("S"))) {
+    isDownPressed = false;
+    image_speed = 1; // reset to default speed    
+}
+
 
 
 // Check if character is on the ground

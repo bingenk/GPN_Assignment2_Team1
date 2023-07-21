@@ -9,6 +9,7 @@
     {"name":"Blocks","order":6,"path":"folders/Objects/Blocks.yy",},
     {"name":"Character","order":3,"path":"folders/Objects/Character.yy",},
     {"name":"Enemies","order":4,"path":"folders/Objects/Enemies.yy",},
+    {"name":"Sounds","order":8,"path":"folders/Objects/Sounds.yy",},
     {"name":"Particle Systems","order":15,"path":"folders/Particle Systems.yy",},
     {"name":"Paths","order":4,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":10,"path":"folders/Rooms.yy",},
@@ -24,7 +25,6 @@
     {"name":"Tiles","order":5,"path":"folders/Sprites/Tiles.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Sounds","order":8,"path":"folders/Objects/Sounds.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Enemy1","order":1,"path":"sprites/Enemy1/Enemy1.yy",},
@@ -33,6 +33,7 @@
     {"name":"Character1_Attack4","order":8,"path":"sprites/Character1_Attack4/Character1_Attack4.yy",},
     {"name":"obj_enemy3","order":2,"path":"objects/obj_enemy3/obj_enemy3.yy",},
     {"name":"obj_ground","order":2,"path":"objects/obj_ground/obj_ground.yy",},
+    {"name":"obj_camera","order":9,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"Lvl1_Tile","order":3,"path":"sprites/Lvl1_Tile/Lvl1_Tile.yy",},
     {"name":"Level2","order":1,"path":"rooms/Level2/Level2.yy",},
     {"name":"Character1_Dash","order":6,"path":"sprites/Character1_Dash/Character1_Dash.yy",},
