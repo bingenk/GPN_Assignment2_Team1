@@ -9,6 +9,12 @@ var ekey = keyboard_check(ord("E"));
 var qkey = keyboard_check(ord("Q"));
 
 
+// Check if character is on the ground
+if (place_meeting(x, y + 1, obj_ground)) {
+    onGround = true;
+} else {
+    onGround = false;
+}
 
 //Right movement
 if (keyboard_check(vk_right) || rkey) {
@@ -19,6 +25,7 @@ if (keyboard_check(vk_right) || rkey) {
     }
     image_xscale = 1;
 }
+
 //Left movement
 else if (keyboard_check(vk_left) || lkey) {
     x -= 3;
@@ -28,17 +35,19 @@ else if (keyboard_check(vk_left) || lkey) {
     }
     image_xscale = -1;
 }
+
 //Down movement
 else if ((keyboard_check(vk_down) || dkey) && !isDownPressed && onGround) {
     sprite_index = Character1_Down;
     image_speed = 1; // adjust this to the speed you want
     isDownPressed = true;
 } else if ((keyboard_check(vk_down) || dkey) && isDownPressed) {
-    if (image_index >= image_number - 1) {
+    if (image_index >= image_number - 1) {		
         image_speed = 0;
         image_index = image_number - 1; // last frame
     }
 }
+
 //Dash movement
 else if (keyboard_check(vk_alt)) {
     if (image_xscale == 1) {  
@@ -50,14 +59,17 @@ else if (keyboard_check(vk_alt)) {
         sprite_index = Character1_Dash;
     }
 }
+
 //Attack 1
 else if (fkey) {
     sprite_index = Character1_Attack1;
 }
+
 //Attack 2
 else if (Rkey) {
     sprite_index = Character1_Attack2;	
 }
+
 //Attack 3
 else if (ekey) {
     if (image_xscale == 1) {  
@@ -71,37 +83,36 @@ else if (ekey) {
         image_speed = 3;
     }
 }
+
 //Attack 4 
 else if (qkey) {
     sprite_index = Character1_Attack4;
     image_speed = 2;
 }
+
 //Default movement
 else {
     sprite_index = Character1;
     image_speed = 1;		
 }
 
-
+//Down movement (Reset)
 if (keyboard_check_released(vk_down) || keyboard_check_released(ord("S"))) {
     isDownPressed = false;
     image_speed = 1; // reset to default speed    
 }
 
-
-
-// Check if character is on the ground
-if (place_meeting(x, y + 1, obj_ground)) {
-    onGround = true;
-} else {
-    onGround = false;
-}
-
-// Handle jumping
+//Jumping movement 
 if ((keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"))) && (onGround || remainingJumps > 0)) {
     vSpeed = -jumpSpeed; // Jump upwards
     remainingJumps -= 1; // Reduce remaining jumps
-    sprite_index = Character1_Jump; // Change sprite to jumping animation
+    
+    if (remainingJumps == maxJumps - 1) { // First jump
+        sprite_index = Character1_Jump; 
+    }
+    else if (remainingJumps == maxJumps - 2) { // Second jump
+        sprite_index = Character1_Jump;         
+    }
 }
 
 // Apply gravity
@@ -125,5 +136,28 @@ if (place_meeting(x, y + vSpeed, obj_ground) && vSpeed > 0) {
     }
 	
 }
+
+//Character Attacks / Decrease HP 
+
+if (place_meeting(x, y, obj_danger)) {
+    // Apply knockback
+    if (x < obj_danger.x) {
+        x -= 50; // Adjust these values to control the knockback distance
+    } else {
+        x += 50;
+    }
+
+    // Decrease health
+    hp -= 1;
+
+    // Check health and respawn if needed
+    if (hp == 0) {
+        x = spawn_x;
+        y = spawn_y;
+        hp = 3; // Reset health
+    }
+}
+
+
 
 

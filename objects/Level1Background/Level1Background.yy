@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Lvl1_Background",
-    "path": "sprites/Lvl1_Background/Lvl1_Background.yy",
+    "name": "Lvl1_background",
+    "path": "sprites/Lvl1_background/Lvl1_background.yy",
   },
   "spriteMaskId": null,
   "visible": true,
