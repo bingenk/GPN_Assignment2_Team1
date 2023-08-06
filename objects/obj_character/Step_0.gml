@@ -8,6 +8,8 @@ var Rkey = keyboard_check(ord("R"));
 var ekey = keyboard_check(ord("E"));
 var qkey = keyboard_check(ord("Q"));
 
+var isAttacking = false;
+
 
 // Check if character is on the ground
 if (place_meeting(x, y + 1, obj_ground)) {
@@ -62,16 +64,19 @@ else if (keyboard_check(vk_alt)) {
 
 //Attack 1
 else if (fkey) {
+	isAttacking = true;
     sprite_index = Character1_Attack1;
 }
 
 //Attack 2
 else if (Rkey) {
+	isAttacking = true;
     sprite_index = Character1_Attack2;	
 }
 
 //Attack 3
 else if (ekey) {
+	isAttacking = true;
     if (image_xscale == 1) {  
         x += 2;
         sprite_index = Character1_Attack3;
@@ -86,6 +91,7 @@ else if (ekey) {
 
 //Attack 4 
 else if (qkey) {
+	isAttacking = true;
     sprite_index = Character1_Attack4;
     image_speed = 2;
 }
@@ -137,12 +143,11 @@ if (place_meeting(x, y + vSpeed, obj_ground) && vSpeed > 0) {
 	
 }
 
-//Character Attacks / Decrease HP 
-
-if (place_meeting(x, y, obj_danger)) {
+//Character Decrease HP
+if (place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) && !isAttacking) {
     // Apply knockback
     if (x < obj_danger.x) {
-        x -= 50; // Adjust these values to control the knockback distance
+        x -= 50; //knockback distance
     } else {
         x += 50;
     }
@@ -159,5 +164,22 @@ if (place_meeting(x, y, obj_danger)) {
 }
 
 
-
-
+// Handle Attack State
+if (isAttacking) {
+    if (sprite_index != Character1_Attack1 && sprite_index != Character1_Attack2 && sprite_index != Character1_Attack3 && sprite_index != Character1_Attack4) {
+        // Attack animation is complete
+        isAttacking = false;
+    } else {
+        // Check for hit
+        if (image_index >= 1 && image_index <= 3) {
+            with (instance_create_depth(x, y, 0, obj_hitbox)) {
+                var enemy = instance_place(x, y, obj_enemy1);
+                if (enemy != noone && enemy.hit == 0) {
+                    enemy.hit = 1;
+                    enemy.vsp = -3;
+                    enemy.hsp = sign(x - enemy.x) * 4;                   
+                }
+            }
+        }
+    }
+}

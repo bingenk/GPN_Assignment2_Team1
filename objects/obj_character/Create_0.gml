@@ -12,4 +12,3 @@ isDownPressed = false;
 
 //Initialize HP for character
 hp = 3;
-

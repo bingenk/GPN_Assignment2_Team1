@@ -22,9 +22,12 @@ for(i = 0; i < array_length_1d(menu); i++)
 // Getting width of cursor to separate it a bit from the menu
 var cursWidth = sprite_get_width(s_cursor);
 
+// Add an offset to move the cursor down
+var yOffset = 14;
+
 // Draw cursor at where it should be, but half its width 
 // to the left of the menu
-draw_sprite(s_cursor, -1, x + cursorLevitate - cursWidth/1, y + selectLerp*spacing);
+draw_sprite(s_cursor, -1, x + cursorLevitate - cursWidth / 1, y + selectLerp * spacing + yOffset);
 
 // Draw game title (at 10% of screen width and height, hence 0.1)
 draw_set_color(titleCol);
