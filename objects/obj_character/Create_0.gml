@@ -12,3 +12,9 @@ isDownPressed = false;
 
 //Initialize HP for character
 hp = 3;
+
+damageCooldown = 0;
+damageCooldownTime = 120; // 120 steps, or 2 second at 60fps
+
+isFlashing = false;
+flashAmount = 0.0;

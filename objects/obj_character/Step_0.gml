@@ -144,7 +144,7 @@ if (place_meeting(x, y + vSpeed, obj_ground) && vSpeed > 0) {
 }
 
 //Character Decrease HP
-if (place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) && !isAttacking) {
+if ((place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) || place_meeting(x, y, obj_enemy2) || place_meeting(x, y, obj_enemy3)) && !isAttacking && (damageCooldown <= 0)) {
     // Apply knockback
     if (x < obj_danger.x) {
         x -= 50; //knockback distance
@@ -161,7 +161,14 @@ if (place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) && !isAtt
         y = spawn_y;
         hp = 3; // Reset health
     }
+	
+	isFlashing = true;
+    flashAmount = 1.0;
+	
+    // Set the cooldown time
+    damageCooldown = damageCooldownTime;
 }
+
 
 
 // Handle Attack State
@@ -183,3 +190,19 @@ if (isAttacking) {
         }
     }
 }
+
+
+if (damageCooldown > 0) {
+    damageCooldown--;
+}
+
+// Hitflash animation
+if (isFlashing && flashAmount > 0) {
+    flashAmount -= 0.1; // Adjust the decrement value to control the flash speed
+} else if (isFlashing && flashAmount <= 0) {
+    isFlashing = false; // Reset isFlashing when the hitflash is complete
+}
+
+
+
+
