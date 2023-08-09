@@ -66,12 +66,14 @@ else if (keyboard_check(vk_alt)) {
 else if (fkey) {
 	isAttacking = true;
     sprite_index = Character1_Attack1;
+	audio_play_sound(attack1_sound, 1, false);
 }
 
 //Attack 2
 else if (Rkey) {
 	isAttacking = true;
-    sprite_index = Character1_Attack2;	
+    sprite_index = Character1_Attack2;		
+	audio_play_sound(attack2_sound, 1, false);
 }
 
 //Attack 3
@@ -86,14 +88,16 @@ else if (ekey) {
         x -= 2;
         sprite_index = Character1_Attack3;
         image_speed = 3;
-    }
+    }	
+	audio_play_sound(attack3_sound, 1, false);
 }
 
 //Attack 4 
 else if (qkey) {
 	isAttacking = true;
     sprite_index = Character1_Attack4;
-    image_speed = 2;
+    image_speed = 2;	
+	audio_play_sound(attack4_sound, 1, false);
 }
 
 //Default movement
@@ -119,6 +123,7 @@ if ((keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"))) && (o
     else if (remainingJumps == maxJumps - 2) { // Second jump
         sprite_index = Character1_Jump;         
     }
+	audio_play_sound(Jump_sound, 1, false);
 }
 
 // Apply gravity

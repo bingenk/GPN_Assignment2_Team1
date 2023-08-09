@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "Level1_Background.mp3",
   "type": 0,
-  "volume": 1.0,
+  "volume": 0.66,
 }
