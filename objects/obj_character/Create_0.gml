@@ -25,3 +25,4 @@ attack2_sound = Snd_attack2;
 attack3_sound = Snd_attack3;
 attack4_sound = Snd_attack4;
 Jump_sound = Snd_Jump;
+

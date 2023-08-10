@@ -163,7 +163,7 @@ if ((place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) || place
     // Check health and respawn if needed
     if (hp == 0) {
         x = spawn_x;
-        y = spawn_y;
+        y = spawn_y;				
         hp = 3; // Reset health
     }
 	
@@ -207,6 +207,8 @@ if (isFlashing && flashAmount > 0) {
 } else if (isFlashing && flashAmount <= 0) {
     isFlashing = false; // Reset isFlashing when the hitflash is complete
 }
+
+
 
 
 

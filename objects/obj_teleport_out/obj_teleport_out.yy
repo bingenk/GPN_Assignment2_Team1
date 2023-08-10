@@ -1,17 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy1",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
-  ],
+  "name": "obj_teleport_out",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Objects/Enemies.yy",
+    "name": "Environment",
+    "path": "folders/Objects/Environment.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -30,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Enemy1",
-    "path": "sprites/Enemy1/Enemy1.yy",
+    "name": "Teleport1",
+    "path": "sprites/Teleport1/Teleport1.yy",
   },
   "spriteMaskId": null,
   "visible": true,
