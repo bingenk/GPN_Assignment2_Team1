@@ -21,3 +21,4 @@ if (isFlashing && flashAmount > 0) {
 } else if (isFlashing && flashAmount <= 0) {
     isFlashing = false; // Reset isFlashing when the hitflash is complete
 }
+

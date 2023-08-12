@@ -9,7 +9,7 @@ var ekey = keyboard_check(ord("E"));
 var qkey = keyboard_check(ord("Q"));
 
 var isAttacking = false;
-
+if(!visible) return 0;
 
 // Check if character is on the ground
 if (place_meeting(x, y + 1, obj_ground)) {
@@ -64,21 +64,22 @@ else if (keyboard_check(vk_alt)) {
 
 //Attack 1
 else if (fkey) {
-	isAttacking = true;
+    isAttacking = true;
     sprite_index = Character1_Attack1;
-	audio_play_sound(attack1_sound, 1, false);
+    audio_play_sound(attack1_sound, 1, false);	
 }
 
 //Attack 2
 else if (Rkey) {
-	isAttacking = true;
-    sprite_index = Character1_Attack2;		
-	audio_play_sound(attack2_sound, 1, false);
+    isAttacking = true;
+    sprite_index = Character1_Attack2;
+    audio_play_sound(attack2_sound, 1, false);
+
 }
 
 //Attack 3
 else if (ekey) {
-	isAttacking = true;
+    isAttacking = true;
     if (image_xscale == 1) {  
         x += 2;
         sprite_index = Character1_Attack3;
@@ -88,16 +89,17 @@ else if (ekey) {
         x -= 2;
         sprite_index = Character1_Attack3;
         image_speed = 3;
-    }	
-	audio_play_sound(attack3_sound, 1, false);
+    }
+    audio_play_sound(attack3_sound, 1, false);
+   
 }
 
 //Attack 4 
 else if (qkey) {
-	isAttacking = true;
+    isAttacking = true;
     sprite_index = Character1_Attack4;
-    image_speed = 2;	
-	audio_play_sound(attack4_sound, 1, false);
+    image_speed = 2;
+    audio_play_sound(attack4_sound, 1, false);    
 }
 
 //Default movement
@@ -113,7 +115,7 @@ if (keyboard_check_released(vk_down) || keyboard_check_released(ord("S"))) {
 }
 
 //Jumping movement 
-if ((keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"))) && (onGround || remainingJumps > 0)) {
+if ((keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W")) || keyboard_check(vk_up)) && (onGround || remainingJumps > 0)) {
     vSpeed = -jumpSpeed; // Jump upwards
     remainingJumps -= 1; // Reduce remaining jumps
     
@@ -184,22 +186,36 @@ if (isAttacking) {
     } else {
         // Check for hit
         if (image_index >= 1 && image_index <= 3) {
-            with (instance_create_depth(x, y, 0, obj_hitbox)) {
+            // Determine hitbox offset based on character's direction
+            var hitbox_offset;
+            if (image_xscale == 1) {
+                hitbox_offset = 0; 
+            } else if (image_xscale == -1) {
+                hitbox_offset = -70; 
+            }
+            
+            with (instance_create_depth(x + hitbox_offset, y, 0, obj_hitbox)) {
                 var enemy = instance_place(x, y, obj_enemy1);
                 if (enemy != noone && enemy.hit == 0) {
                     enemy.hit = 1;
                     enemy.vsp = -3;
                     enemy.hsp = sign(x - enemy.x) * 4;                   
-                }
+					
+					if (enemy.hit == 1) {
+						instance_destroy(obj_hitbox);
+					}
+                } 
             }
         }
     }
 }
 
 
+
 if (damageCooldown > 0) {
     damageCooldown--;
 }
+
 
 // Hitflash animation
 if (isFlashing && flashAmount > 0) {
@@ -207,7 +223,6 @@ if (isFlashing && flashAmount > 0) {
 } else if (isFlashing && flashAmount <= 0) {
     isFlashing = false; // Reset isFlashing when the hitflash is complete
 }
-
 
 
 

@@ -6,3 +6,4 @@ canBeHit = true;
 
 isFlashing = false;
 flashAmount = 0.0;
+
