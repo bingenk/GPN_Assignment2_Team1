@@ -162,11 +162,14 @@ if ((place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) || place
     // Decrease health
     hp -= 1;
 
+	
+	audio_play_sound(Snd_Damage, 1, false);
+	
     // Check health and respawn if needed
     if (hp == 0) {
         x = spawn_x;
         y = spawn_y;				
-        hp = 3; // Reset health
+        hp = 6; // Reset health
     }
 	
 	isFlashing = true;
@@ -224,7 +227,18 @@ if (isFlashing && flashAmount > 0) {
     isFlashing = false; // Reset isFlashing when the hitflash is complete
 }
 
-
-
-
-
+// Check if the character collides with a coin
+if (place_meeting(x, y, obj_coin)) {
+    // If so, collect the coin and destroy it
+    var coin = instance_place(x, y, obj_coin);
+    if (coin != noone) {
+        instance_destroy(coin);
+        coins += 1;
+        
+        // Check if the character has collected 15 coins
+        if (coins % 15 == 0) {
+            hp += 1;
+        }
+    }
+	audio_play_sound(Snd_Coin, 1, false);
+}

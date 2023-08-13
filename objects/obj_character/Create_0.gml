@@ -11,7 +11,13 @@ remainingJumps = maxJumps; // Number of jumps remaining
 isDownPressed = false;
 
 //Initialize HP for character
-hp = 3;
+hp = 6;
+hp_max = hp;
+healthbar_width = 170;
+healthbar_height = 29;
+healthbar_x = 0 + (healthbar_width / 3); // Position at x = 0
+healthbar_y = 30 + (healthbar_height / 3); // Position at y = 0
+
 
 damageCooldown = 0;
 damageCooldownTime = 120; // 120 steps, or 2 second at 60fps
@@ -28,3 +34,5 @@ attack4_sound = Snd_attack4;
 Jump_sound = Snd_Jump;
 
 
+//Coin collection 
+coins = 0;
