@@ -36,3 +36,5 @@ Jump_sound = Snd_Jump;
 
 //Coin collection 
 coins = 0;
+gems = 0;
+

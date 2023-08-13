@@ -33,5 +33,5 @@
     "path": "sprites/Attack1_HitBox/Attack1_HitBox.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

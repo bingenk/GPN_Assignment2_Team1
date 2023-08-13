@@ -151,7 +151,7 @@ if (place_meeting(x, y + vSpeed, obj_ground) && vSpeed > 0) {
 }
 
 //Character Decrease HP
-if ((place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) || place_meeting(x, y, obj_enemy2) || place_meeting(x, y, obj_enemy3)) && !isAttacking && (damageCooldown <= 0)) {
+if ((place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) || place_meeting(x, y, obj_enemy2) || place_meeting(x, y, obj_enemy3) || place_meeting(x, y, obj_enemy4) || place_meeting(x, y, obj_enemy5)) && !isAttacking && (damageCooldown <= 0)) {
     // Apply knockback
     if (x < obj_danger.x) {
         x -= 50; //knockback distance
@@ -170,6 +170,8 @@ if ((place_meeting(x, y, obj_danger) || place_meeting(x, y, obj_enemy1) || place
         x = spawn_x;
         y = spawn_y;				
         hp = 6; // Reset health
+		coins = 0;
+		gems = 0;
     }
 	
 	isFlashing = true;
@@ -241,4 +243,56 @@ if (place_meeting(x, y, obj_coin)) {
         }
     }
 	audio_play_sound(Snd_Coin, 1, false);
+}
+
+// Check if the character collides with a gem
+if (place_meeting(x, y, obj_Gem1)) {
+    // If so, collect the coin and destroy it
+    var gem1 = instance_place(x, y, obj_Gem1);
+    if (gem1 != noone) {
+        instance_destroy(gem1);
+        gems += 1;
+        
+        // Check if the character has collected 15 coins
+        if (gems % 15 == 0) {
+            hp += 1;
+        }
+    }
+	audio_play_sound(Snd_Gem1, 1, false);
+}
+
+// Check if the character collides with a gem(bigger)
+if (place_meeting(x, y, obj_Gem)) {
+    // If so, collect the coin and destroy it
+    var gem = instance_place(x, y, obj_Gem);
+    if (gem != noone) {
+        instance_destroy(gem);
+        gems += 3;
+        
+        // Check if the character has collected 15 coins
+        if (gems % 15 == 0) {
+            hp += 1;
+        }
+    }
+	audio_play_sound(Snd_Gem1, 1, false);
+}
+
+
+
+// Check if the character collides with obj_ultradamage
+if (place_meeting(x, y, obj_ultradamage) || place_meeting(x, y, obj_danger) || hp == 0) {
+    if (room == Level2){
+		obj_character.x = 156;    
+		obj_character.y = 238;	
+		hp = 6; // Reset health
+		coins = 0;
+		gems = 0;
+	}
+}
+
+// Check if the character collides with obj_FlagWin
+if (place_meeting(x, y, obj_FlagWin)) {
+    // End the game or trigger a win state
+    show_message("You won!"); // Display a message
+    game_end(); // End the game
 }
