@@ -4,10 +4,10 @@
 
 **Game Engine used – GameMaker**
 
-<img src="https://github.com/bingenk/GPN_Assignment2_Team1/assets/115916417/5e326fd1-9324-455a-a0d1-f9b8968f75d4" width="351" height="193"> 
-<img src="https://github.com/bingenk/GPN_Assignment2_Team1/assets/115916417/717343ee-19c8-4ed6-8d21-d9b61e445f11" width="351" height="193"> 
-<img src="https://github.com/bingenk/GPN_Assignment2_Team1/assets/115916417/cab5c12b-b442-4660-a38e-bcb275143792" width="351" height="193"> 
-<img src="https://github.com/bingenk/GPN_Assignment2_Team1/assets/115916417/a7b24a57-17e5-4719-ba12-9ca49cd3bbf8" width="351" height="193"> 
+<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/06d498b8-0674-427e-abd2-4e10a3e4b9a8" width="351" height="193"> 
+<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/86126b05-2281-4b8d-9dcc-3caa7078d999" width="351" height="193"> 
+<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/0faf01c6-45bc-4fd7-a137-22b8f2b9976f" width="351" height="193"> 
+<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/b5213df9-f9cb-45da-98bb-88e3fa40efc7" width="351" height="193">  
 
 
 ## Protagonist: :elf_man:
