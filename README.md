@@ -4,11 +4,6 @@
 
 **Game Engine used – GameMaker**
 
-<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/06d498b8-0674-427e-abd2-4e10a3e4b9a8" width="351" height="193"> 
-<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/86126b05-2281-4b8d-9dcc-3caa7078d999" width="351" height="193"> 
-<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/0faf01c6-45bc-4fd7-a137-22b8f2b9976f" width="351" height="193"> 
-<img src="https://github.com/bingenk/GPN_Assignment_2_Team1/assets/115916417/b5213df9-f9cb-45da-98bb-88e3fa40efc7" width="351" height="193">  
-
 
 ## Protagonist: :elf_man:
 
