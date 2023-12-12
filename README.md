@@ -13,14 +13,14 @@ A young and adventurous hero named "Flix", is chosen by the ancient spirits to r
 
 Our game is set in a world where each realm is governed by a unique element (fire, water, earth, air, etc.). The harmony of these realms is maintained by a mystical artifact known as the "Elemental Orb". However, an evil sorcerer has the Orb, causing chaos and imbalance among the realms. Each piece of the Orb has landed in a different realm, altering its nature and making it hostile.
 
-## Gameplay Elements: :joystick: :video_game:
+## Gameplay Elements:
 
 Each realm could have unique gameplay mechanics related to its element. For example, the earth realm could have destructible terrain, the water realm could have underwater physics, and the air realm could have wind currents affecting movement. This would keep the gameplay fresh and engaging, as players would need to adapt to the changing mechanics.
 
 As the game progresses, the levels would become more challenging, reflecting Flix's growing skills and maturity. The final level could be a confrontation with the sorcerer, where Flix must use all the skills he's learned to defeat him and restore the Orb.
 
 
-## Game Mechanics Used or Could be Used: :crossed_swords: :triangular_ruler:
+## Game Mechanics Used or Could be Used:
 
 <em>**Elemental Abilities:**</em> As Flix progresses through each realm, he could gain abilities related to that realm's element. For example, in the fire realm, he could a fire dash that allows him to move quickly and damage enemies. In the water realm, he could gain the ability to breathe underwater and swim against strong currents.
 
