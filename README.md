@@ -5,11 +5,11 @@
 **Game Engine used – GameMaker**
 
 
-## Protagonist: :elf_man:
+## Protagonist:
 
 A young and adventurous hero named "Flix", is chosen by the ancient spirits to restore balance. Flix must journey through each realm, overcoming increasingly challenging platform levels, to retrieve the pieces of the Orb and restore harmony.
 
-## Storyline: :closed_book:
+## Storyline: 
 
 Our game is set in a world where each realm is governed by a unique element (fire, water, earth, air, etc.). The harmony of these realms is maintained by a mystical artifact known as the "Elemental Orb". However, an evil sorcerer has the Orb, causing chaos and imbalance among the realms. Each piece of the Orb has landed in a different realm, altering its nature and making it hostile.
 
